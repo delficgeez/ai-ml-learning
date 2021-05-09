@@ -171,7 +171,16 @@ model.compile(optimizer=RMSprop(lr=0.001), loss='binary_crossentropy', metrics=[
 
 
 TRAINING_DIR = '/tmp/cats-v-dogs/training' 
-train_datagen = ImageDataGenerator( rescale = 1.0/255. ) 
+train_datagen = ImageDataGenerator(
+    rescale = 1.0/255.,
+    rotation_range=40, # image augmentation to help overfitting
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True,
+    fill_mode='nearest'
+) 
 
 # NOTE: YOU MUST USE A BATCH SIZE OF 10 (batch_size=10) FOR THE 
 # TRAIN GENERATOR.
