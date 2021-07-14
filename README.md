@@ -1,2 +1,2 @@
-# ml-ai-learning
-All code in learning phase
+# ai-ml
+All Artificial Intelligence/ Machine Learning code
